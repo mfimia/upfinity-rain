@@ -4,11 +4,11 @@ image.src = "./blacklog (1).png";
 image.addEventListener("load", function () {
   const canvas = document.getElementById("canvas1");
   const ctx = canvas.getContext("2d");
-  canvas.width = 572;
-  canvas.height = 452;
+  canvas.width = 286;
+  canvas.height = 226;
 
   let particlesArray = [];
-  const numberOfParticles = 12000;
+  const numberOfParticles = 3000;
   const detail = 1;
 
   ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
@@ -24,7 +24,6 @@ image.addEventListener("load", function () {
       const blue = pixels.data[y * 4 * pixels.width + (x * 4 + 2)];
       const color = "rgb(" + red + "," + green + "," + blue + ")";
       const brightness = calculateBrightness(red, green, blue) / 100;
-      canvas.style.color = color;
       row.push(brightness);
     }
     grid.push(row);
